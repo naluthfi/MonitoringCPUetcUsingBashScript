@@ -1,7 +1,7 @@
 #!/bin/bash
 while [ true ]
 do
-	waktu=`date +"%F %r"`
+	waktu=`date +"%F %H:%M:%S"`
 	cpuload=`cat /proc/loadavg | awk '{print $2}'`
 	parcpu=0.8;
 	if [ $cpuload '>' $parcpu ]
@@ -16,19 +16,10 @@ do
 		then
 			echo -e "Your Memory is greater than 80%. Please check it on your PC.\n\n\nRegards,\n\nAdmin" | mail -s "High Memory Used Notification" "naluthfi@gmail.com"
 	fi	
-	totalkoneksi=`netstat -i | grep -v "Kernel" | grep -v "Iface" | wc -l`
-	echo -n "| Date : $waktu | CPU Load : $cpuload | Memory Used : $memused/$memtotal ($mempercent%) | Bandwidth (Iface RX TX) : " >> filemonitoring
-	while [ $totalkoneksi -gt 0 ];
-	do
-		NewBandwidth=`netstat -i | grep -v "Kernel" | grep -v "Iface" | awk -v var=$totalkoneksi 'NR==var' | awk '{print $1 " " $4 " " $8}'`;
-		echo -n "$NewBandwidth" >> filemonitoring
-		if [ $totalkoneksi -gt 1 ];
-		then
-			echo -n ", " >> filemonitoring
-		fi
-		totalkoneksi=`expr $totalkoneksi - 1`;
-	done;
-	IOspeed=`sudo iotop -q | head -2 | awk 'NR==2' | awk '{print}'`;
-	echo " | $IOspeed |" >> filemonitoring;
-	sleep 5;
-done;
+	rx=`netstat -i | grep -v "Kernel" | grep -v "Iface" | awk 'NR==3' | awk '{printf "%.2f", $4/1024}'`
+	tx=`netstat -i | grep -v "Kernel" | grep -v "Iface" | awk 'NR==3' | awk '{printf "%.2f", $8/1024}'`
+	DRead=`sudo iotop -q | head -2 | awk 'NR==2' | awk '{printf "%.2f", $4/1024}'`
+	DWrite=`sudo iotop -q | head -2 | awk 'NR==2' | awk '{printf "%.2f", $10/1024}'`
+	echo "|$waktu|CPU Load: $cpuload|MemUsed: $memused/$memtotal|TX: $tx Kb/s|RX: $rx Kb/s|DRead: $DRead KB/s|DWrite: $DWrite KB/s|" >> filemonitoring
+	sleep 5
+done

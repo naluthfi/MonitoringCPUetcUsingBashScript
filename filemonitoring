@@ -1,0 +1,7 @@
+| Date : 2018-06-28 07:35:59 PM | CPU Load : 0.68 | Memory Used : 2.5G/3.8G (67.24%) | Bandwidth (Iface RX TX) : wlp3s0 692375 295873, lo 1210753 1210753, enp2s0 0 0 | Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s |
+| Date : 2018-06-28 07:36:04 PM | CPU Load : 0.67 | Memory Used : 2.5G/3.8G (67.24%) | Bandwidth (Iface RX TX) : wlp3s0 692414 295883, lo 1210861 1210861, enp2s0 0 0 | Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s |
+| Date : 2018-06-28 07:36:09 PM | CPU Load : 0.67 | Memory Used : 2.5G/3.8G (67.27%) | Bandwidth (Iface RX TX) : wlp3s0 692448 295883, lo 1210961 1210961, enp2s0 0 0 | Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s |
+| Date : 2018-06-28 07:36:15 PM | CPU Load : 0.68 | Memory Used : 2.5G/3.8G (67.29%) | Bandwidth (Iface RX TX) : wlp3s0 692474 295884, lo 1211061 1211061, enp2s0 0 0 | Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s |
+| Date : 2018-06-28 07:36:20 PM | CPU Load : 0.67 | Memory Used : 2.5G/3.8G (67.29%) | Bandwidth (Iface RX TX) : wlp3s0 692509 295885, lo 1211169 1211169, enp2s0 0 0 | Actual DISK READ:       0.00 B/s | Actual DISK WRITE:       0.00 B/s |
+|2018-06-28 19:38:05|CPU Load: 0.68|MemUsed: 2.6G/3.8G|TX: 289.08 Kb/s|RX: 676.85 Kb/s|DRead: 0.00 KB/s|DWrite: 0.00 KB/s|
+|2018-06-28 19:38:11|CPU Load: 0.79|MemUsed: 2.6G/3.8G|TX: 289.08 Kb/s|RX: 676.88 Kb/s|DRead: 0.00 KB/s|DWrite: 0.00 KB/s|
